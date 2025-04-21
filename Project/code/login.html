@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm" method="POST" action="connect.php">
+            <input type="text" placeholder="Enter your username" id="username" required>
+            <input type="password" placeholder="Enter your password" id="password" required>
+            <button type="submit" value="Login" onclick="log(event)">Login</button>
+        </form>
+        <div class="register-link">
+            Don't have an account? <a href="#">Register</a>
+        </div>
+    </div>
+
+    <script>
+        function log(event){
+            event.preventDefault();
+            var user = document.forms['loginForm'].elements[0].value;
+            var pass = document.forms['0'].elements["password"].value;
+            if(user == "" || pass == ""){
+                alert("Pleas Enter Username or Password");
+            }else if(user != "Ryka" || pass != 22222){
+                alert("Inccorect Pleas Try again!!");
+            }else{
+                window.location.href="home.html"
+            }
+        }
+        
+    </script>
+
+</body>
+</html>
